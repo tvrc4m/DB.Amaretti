@@ -2,12 +2,12 @@
 using Orchard.ContentManagement.Handlers;
 using Orchard.Localization;
 
-namespace DBAmeretti.Handlers {
-    public class DBAmerettiThemeSettingsPartHandler : ContentHandler {
+namespace DBAmaretti.Handlers {
+    public class DBAmarettiThemeSettingsPartHandler : ContentHandler {
         public DBAmerettiThemeSettingsPartHandler() {
             T = NullLocalizer.Instance;
-            Filters.Add(new ActivatingFilter<DBAmerettiThemeSettingsPartHandler>("Site"));
-            Filters.Add(new TemplateFilterForPart<DBAmerettiThemeSettingsPart>("DBAmerettiThemeSettings", "Parts/DBAmerettiThemeSettings", "Theme-DB.Ameretti"));
+            Filters.Add(new ActivatingFilter<DBAmarettiThemeSettingsPartHandler>("Site"));
+            Filters.Add(new TemplateFilterForPart<DBAmerettiThemeSettingsPart>("DBAmarettiThemeSettings", "Parts/DBAmarettiThemeSettings", "Theme-DB.Ameretti"));
         }
 
         public Localizer T { get; set; }
@@ -16,7 +16,7 @@ namespace DBAmeretti.Handlers {
             if (context.ContentItem.ContentType != "Site")
                 return;
             base.GetItemMetadata(context);
-            context.Metadata.EditorGroupInfo.Add(new GroupInfo(T("Theme-DB.Ameretti")));
+            context.Metadata.EditorGroupInfo.Add(new GroupInfo(T("Theme-DB.Amaretti")));
         }
     }
 
