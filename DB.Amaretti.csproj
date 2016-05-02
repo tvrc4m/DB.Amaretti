@@ -1311,6 +1311,7 @@
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
     <Content Include="Views\EditorTemplates\Parts\DateTimeEditor.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\DBAmarettiThemeSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainMenu.cs" />
@@ -1373,6 +1374,9 @@
     <Content Include="Views\Parts.Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Parts.ZenGallery.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Title.cshtml" />
     <Content Include="Views\NotFound.cshtml" />
     <Content Include="Views\Media.Summary.cshtml" />
@@ -1389,7 +1393,42 @@
     <Content Include="Views\CommentReplyButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gravatar\Gravatar.cs" />
+    <Compile Include="Gravatar\Gremail.cs" />
+    <Compile Include="Gravatar\Grofile.cs" />
+    <Compile Include="Gravatar\GrofileInfo.cs" />
+    <Compile Include="Gravatar\Html\HtmlHelperExtensions.cs" />
+    <Compile Include="Gravatar\Html\UrlHelperExtensions.cs" />
+    <Compile Include="Handlers\DBAmarettiThemeSettingsPartHandler.cs" />
+    <Compile Include="Models\DBAmarettiThemeSettingsPart.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Parts.TagCloud.cshtml" />
+    <Content Include="Views\Parts.Tags.ShowTags.cshtml" />    
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts.TagCloud.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts.TwitterWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\latest-twitter.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\latest-twitter.css.map">
+      <DependentUpon>latest-twitter.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Slider.cshtml" />
+    <Content Include="Views\Styler.cshtml" />
+    <Content Include="Views\ThemeSettings.cshtml" />
+    <Content Include="Views\ThemeSwitcher.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Zone-Popup.cshtml" />
+    <Content Include="Views\Zone-Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
