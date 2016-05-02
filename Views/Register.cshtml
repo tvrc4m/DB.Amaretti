@@ -1,0 +1,110 @@
+﻿@{
+
+    var messageTag = Tag(Model, "div");
+}
+@if (Html.ValidationSummary() != null)
+{
+    @messageTag.StartElement
+    <div class="icon"><span class="icon s7-attention"></span></div>
+    <div class="message">
+        <button class="close" aria-label="Close" data-dismiss="alert" type="button"><span class="s7-close" aria-hidden="true"></span></button>&nbsp;&nbsp;@T("Account creation was unsuccessful. Please correct the errors and try again.")
+        <p>@Html.ValidationSummary()</p>
+    </div>
+    @messageTag.EndElement
+}
+@{
+    Script.Require("jQuery");
+
+}
+<h2>@Html.TitleForPage(T("Create a New Account").ToString())</h2>
+<p>@T("Use the form below to create a new account.")</p>
+<p>@T("Passwords are a min 8 Chars", ViewData["PasswordLength"])</p>
+@using (Html.BeginFormAntiForgeryPost(Url.Action("register", new { ReturnUrl = Request.QueryString["ReturnUrl"], id = "register", name = "register" })))
+{
+    <div class="container-fluid panel panel-default">
+        <div class="panel-heading">
+            <h3>@T("Account Information")</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row form-group">
+                <div class="col-xs-6 col-md-6 col-lg-4">
+                    <label for="User_FirstName_Value">@T("First name:")</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon112"><i class="icon s7-user"></i></span>
+                        @Html.TextBox("User_FirstName_Value", null, new { @class = "validate[required,ajax[ajaxFirstName]] form-control", placeholder = "First Name (required)", id = "User_FirstName_Value", name = "User.FirstName.Value", type = "text", required = "required" })
+                    </div>
+                    @Html.ValidationMessage("User_FirstName_Value")
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-4">
+                    <label for="User_LastName_Value">@T("Last name:")</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon113"><i class="icon s7-user"></i></span>
+                        @Html.TextBox("User_LastName_Value", null, new { @class = "validate[required,ajax[ajaxLastName]] form-control", placeholder = "Last Name (required)", id = "User_LastName_Value", name = "User.LastName.Value", type = "text", required = "required" })
+                    </div>
+                    @Html.ValidationMessage("User_LastName_Value")
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-6 col-md-6 col-lg-4">
+                    <label for="username">@T("Username:")</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon114"><span class="icon s7-users"></span></span>
+                        @Html.TextBox("username", null, new { @class = "validate[required,ajax[ajaxUserName]] form-control", placeholder = "Username (required)", type = "text", required = "required" })
+                    </div>
+                    @Html.ValidationMessage("username")
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-4">
+                    <label for="email">@T("Email:")</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon115"><span class="icon s7-mail"></span></span>
+                        @Html.TextBox("email", null, new { @class = "validate[required,custom[email],ajax[ajaxUserEmail]] form-control", placeholder = "Valid email (required)", pattern = "[^ @]*@[^ @]*", type = "email", required = "required" })
+                    </div>
+                    @Html.ValidationMessage("email")
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-6 col-md-6 col-lg-4">
+                    <label for="password">@T("Password:")</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon116"><span class="icon s7-door-lock"></span></span>
+                        @Html.Password("password", null, new { @class = "validate[required,minSize[" + ViewData["PasswordLength"] + "]] form-control", placeholder = "Password of 8 chars", pattern = ".{8,}", type = "password", required = "required" })
+                    </div>
+                    @Html.ValidationMessage("password")
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-4">
+                    <label for="confirmPassword">@T("Confirm password:")</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon117"><span class="icon s7-door-lock"></span></span>
+                        @Html.Password("confirmPassword", null, new { @class = "validate[required,minSize[" + ViewData["PasswordLength"] + "],equals[password]] form-control", placeholder = "Confirm Password" })
+                    </div>
+                    @Html.ValidationMessage("confirmPassword")
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="am-checkbox">                    
+                        <input class="required" required type="checkbox" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');" id="terms" name="terms" value="terms" />Please agree to our terms!
+                    <label class="control checkbox" for="terms">Please indicate that you accept the Terms and Conditions</label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">@T("Register")</button>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">   
+        document.getElementById("terms").setCustomValidity("Please indicate that you accept the Terms and Conditions")
+</script>
+<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                icons: {
+                    time: "s7-clock",
+                    date: "s7-date",
+                    up: "s7-up-arrow",
+                    down: "s7-down-arrow"
+                }
+            });
+        });
+</script>

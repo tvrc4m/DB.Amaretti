@@ -1,0 +1,56 @@
+.sprite-Facebook_2x,.sprite-Favorites_2x,.sprite-Github_2x,sprite-Google__2x,.sprite-Happy_Face_2x,.sprite-LinkedIn_2x,.sprite-RSS_2_2x,.sprite-Reddit_2x,.sprite-Reply_2x,.sprite-Skype_2x,.sprite-Stumbleupon_2x,.sprite-Tea_Cup_2x,.sprite-Tumblr_2x,.sprite-Twitter_2x,.sprite-Vine_2x,.sprite-Wine_Glass_2x,.sprite-Wordpress_2x,sprite-World_Times_2x,.sprite-YouTube_2x,.sprite-YouTube_2x,.sprite-iCloud_2x{background-image: url(../Images/spritesheet.png);background-repeat: no-repeat;display:block}
+.sprite-Facebook_2x {background-position:-5px, -5px, 50px, 50px}
+
+.sprite-Favorites_2x{background-position:-65px, -5px, 54px, 52px}
+.sprite-Github_2x{background-position:-129px, -5px, 50px, 50px}
+
+    .sprite-Google__2x {background-position:-189px, -5px, 50px, 50px
+    }
+
+    .sprite-Happy_Face_2x{background-position:-5px, -65px, 48px, 48px
+    }
+
+    .sprite-LinkedIn_2x {background-position:-129px, -65px, 50px, 50px
+    }
+
+    .sprite-RSS_2_2x {background-position:-189px, -65px, 50px, 50px
+    }
+
+    .sprite-Reddit_2x {background-position:-5px, -125px, 50px, 50px
+    }
+
+    .sprite-Reply_2x {background-position:-65px, -125px, 50px, 38px
+    }
+
+    .sprite-Skype_2x {background-position:-125px, -125px, 50px, 50px
+    }
+
+    .sprite-Stumbleupon_2x {background-position:-185px, -125px, 50px, 50px
+    }
+
+    .sprite-Tea_Cup_2x {background-position:-5px, -185px, 62px, 57px
+    }
+
+    .sprite-Tumblr_2x {background-position:-77px, -185px, 50px, 50px
+    }
+
+    .sprite-Twitter_2x {background-position:-137px, -185px, 50px, 50px
+    }
+
+    .sprite-Vine_2x {background-position:-197px, -185px, 50px, 50px
+    }
+
+    .sprite-Wine_Glass_2x {background-position:-249px, -5px, 30px, 54px
+    }
+
+    .sprite-Wordpress_2x {background-position:-249px, -69px, 50px, 50px
+    }
+
+    .sprite-World_Times_2x {background-position:-77px, -245px, 50px, 50px
+    }
+
+    .sprite-YouTube_2x {background-position:-137px, -245px, 50px, 50px
+    }
+
+    .sprite-iCloud_2x {background-position:-197px, -245px, 70px, 44px
+    }

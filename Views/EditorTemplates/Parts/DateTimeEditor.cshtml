@@ -1,0 +1,59 @@
+﻿@model Orchard.Core.Common.ViewModels.DateTimeEditor
+
+@{
+    Style.Require("BootstrapTimePicker");
+    Style.Require("BootstrapDatePicker");
+
+    Script.Require("BootstrapTimePicker").AtFoot();   
+    Script.Require("BootstrapDatePicker").AtFoot();
+}
+<fieldset class="createdutc-datetime">
+ <div class="form-inline container-fluid">     
+        <div class="row">
+          @if (Model.ShowDate) { 
+          <div class="col-xs-3">
+                 <label class="forpicker sr-only" for="@Html.FieldIdFor(m => Model.Date)">@T("Date")</label>                                                       
+                 <div class="input-group" id="sandbox-container" data-date-format="dd-mm-yyyy"> 
+                      @Html.EditorFor(m => m.Date, new { @class = "datepicker dates form-control", id = "Editor.Date" } )                                                                                                                                     
+                     <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+                </div>
+          </div>
+}
+
+       @if (Model.ShowTime) {
+           <div class="col-xs-3">
+               <label class="forpicker sr-only" for="@Html.FieldIdFor(m => Model.Time)">@T("Time")</label>                                     
+               <div class="input-group bootstrap-timepicker">
+                   <input id="timepicker1" type="text" class="form-control timepicker" name="Editor.Time"  />                     
+                   <span class="input-group-addon glyphicon glyphicon-time"></span>
+                </div>                                  
+            </div>
+}
+               
+     </div>
+ </div>
+</fieldset>
+@if (Model.ShowDate) { <text>@Html.ValidationMessageFor(m => m.Date)</text> }
+@if (Model.ShowTime) { <text>@Html.ValidationMessageFor(m => m.Time)</text> }
+
+@using (Script.Foot()) {
+
+   <script type="text/javascript">
+       //<![CDATA[
+       $(function () {
+             $('#sandbox-container input').datepicker({
+             });
+             $('#timepicker1').timepicker({
+                   defaultTime: 'current',
+                   minuteStep: 1,
+                   disableFocus: true,
+                   template: 'dropdown'
+              });
+              $('#timepicker1').on("changeTime.timepicker", function (ev) {
+                    console.log("event: " + ev.time.value);
+                    console.log("getTime: " + $('#timepicker1').data("timepicker").getTime());
+               });
+          });
+       //]]>
+   </script>
+}

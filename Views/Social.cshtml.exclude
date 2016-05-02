@@ -1,0 +1,40 @@
+﻿@using Moff.Social.Models
+@model SocialPart
+<div id="socialcontainer" class="center">
+    <div class="row">
+        <span class="btn-group">
+            <a class="iframe btn btn-default btn-lg" data-toggle="tooltip" data-url="@Model.Url" data-count="horizontal" title="Feedburner" href="http://donboulton.com/donboulton.rss.xml" data-original-title="Don Boulton Site RSS">
+                <span class="sprite-RSS_2_2x"></span>
+            </a>
+            <a class="btn btn-default btn-lg" data-toggle="tooltip" data-original-title="Email Donald Boulton at Google + Page" href="mailto:don-boulton-4557@pages.plusgoogle.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                <span class="icon s7-mail"></span>
+            </a>
+            <a class="btn btn-default btn-lg" data-toggle="tooltip" data-count="horizontal" href="https://twitter.com/intent/tweet?url=@Model.Url&text=DonaldBoulton&via=donboulton" data-original-title="Twitter Share" data-user-id="105217183">
+                <span class="sprite-Twitter_2x"></span>
+            </a>
+            <a class="btn btn-default btn-lg" data-toggle="tooltip" data-url="@Model.Url" href="https://plus.google.com/share?url=@Model.Url" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-original-title="Share on Google+">
+                <span class="sprite-Google_2x"></span>
+            </a>
+            <a class="btn btn-default btn-lg" data-toggle="tooltip" data-url="@Model.Url" href="https://facebook.com/?n=donboulton" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-original-title="Share on Facebook">
+                <span class="sprite-Facebook_2x"></span>
+            </a>
+            <a class="btn btn-default btn-lg" data-toggle="tooltip" data-url="@Model.Url" href="https://github.com/donaldboulton.atom" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-original-title="Github Activity Feed">
+                <span class="sprite-Github_2x"></span>
+            </a>
+            <a class="btn btn-default btn-lg" data-toggle="tooltip" data-url="@Model.Url" href="https://onedrive.live.com/redir?resid=BFE52B3504AE372E%21135" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-original-title="My One Drive">
+                <span class="sprite-iCloud_2x"></span>
+            </a>
+            <a data-toggle="tooltip" data-url="@Model.Url" data-original-title="Proof of God scientifically" class="youtube btn btn-default btn-lg" href="http://www.youtube.com/embed/p00AYijRJy4?feature=player_detailpage">
+                <span class="sprite-YouTube_2x"></span>
+            </a>
+            <a data-toggle="tooltip" data-url="@Model.Url" data-original-title="Proof of God scientifically" class="youtube btn btn-default btn-lg" href="http://www.youtube.com/embed/p00AYijRJy4?feature=player_detailpage">
+                <span class="sprite-Tea_Cup_2x"></span>
+            </a>
+            <a data-toggle="tooltip" data-url="@Model.Url" data-original-title="Proof of God scientifically" class="youtube btn btn-default btn-lg" href="http://www.youtube.com/embed/p00AYijRJy4?feature=player_detailpage">
+                <span class="sprite-World_Times_2x"></span>
+            </a>
+            <input value="donboulton/Sohc" name="uri" type="hidden">
+            <input value="en_US" name="loc" type="hidden">
+        </span>
+    </div>
+</div>

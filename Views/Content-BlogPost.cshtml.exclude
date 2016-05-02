@@ -1,0 +1,36 @@
+﻿@using Orchard.ContentManagement;
+@using Orchard.Tags.ViewModels;
+@using Orchard.Utility.Extensions;
+
+@{
+    var blogPost = Model.ContentItem;
+    Layout.Title = Model.ContentItem.TitlePart.Title;
+}
+
+<article id="post-@blogPost.Id">
+    <header class="group">
+        <div id="header">
+            <h1><a href="@Url.ItemDisplayUrl((IContent)blogPost)" rel="nofollow"><span itemprop="name">@blogPost.TitlePart.Title</span></a></h1>
+        </div>
+    </header>
+    <div class="row metadata">     
+        <div class="col-md-6">
+            <div class="pull-left">
+                @if (Model.Tags.Items.Count > 0 && ((IEnumerable<ShowTagViewModel>)Model.Tags.Items[0].Tags).Any()) {
+                    <i class="fa fa-tags"></i>@Display(Model.Tags)
+                }
+                <i class="fa fa-user"></i>&nbsp;<a itemprop="url" href="@Href("~/profile/")@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a>
+        </div>
+        </div>
+         <div class="col-md-6">
+            <div class="pull-right">
+                <span><i class="fa fa-comments"></i>
+                <a href="#comments-link">@Display(Model.CommentsCount)</a></span>                
+                <span itemprop="datePublished"><i class="fa fa-calendar"></i>
+                @blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMMM d, yyyy")</span>
+            </div>
+        </div>
+    </div>    
+    @Display(Model.Summary)
+</article>
+@Display(Model.Footer)

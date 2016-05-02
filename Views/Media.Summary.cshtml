@@ -1,0 +1,8 @@
+﻿@using Orchard.MediaLibrary.Models
+@using Orchard.Utility.Extensions;
+@{
+    MediaPart mediaPart = Model.ContentItem.MediaPart;
+}
+<a href="@mediaPart.MediaUrl">
+    <img src="@Display.ResizeMediaUrl(Width: 200, Height: 200, Mode: "crop", Alignment: "middlecenter", Path: mediaPart.MediaUrl)" alt="@mediaPart.Caption" class="thumbnail"/>
+</a>

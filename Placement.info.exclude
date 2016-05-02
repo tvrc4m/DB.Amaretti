@@ -1,0 +1,29 @@
+<Placement>
+  <!-- available display shapes -->
+  <!--
+    Parts_Title
+    Parts_Title_Summary
+    Parts_Title_SummaryAdmin
+    -->
+  <Place Parts_Title_Edit="Header:before.5"/>
+  <Match DisplayType="Detail">
+    <Place Parts_Title="Header:1"/>
+  </Match>
+  <Match DisplayType="Summary">
+    <Place Parts_Title_Summary="Header:5"/>
+  </Match>
+  <Match ContentType="BlogPost">
+    <Match DisplayType="Summary">
+      <Place Parts_Common_Body_Summary="Summary:0"
+             Parts_Tags_ShowTags="Tags:0"
+             Parts_Common_Metadata_Summary="-" />
+    </Match>
+    <Match DisplayType="Detail">
+      <Place Parts_Common_Body="Summary:0"
+             Parts_Tags_ShowTags="Tags:0"
+             Parts_ListOfComments="Footer:1"
+             Parts_CommentForm="Footer:2"
+             Parts_Common_Metadata="-" />
+    </Match>
+  </Match>
+</Placement>

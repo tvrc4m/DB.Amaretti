@@ -1,0 +1,77 @@
+﻿@using Orchard.ContentManagement
+@{   
+    var userCanRegister = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().UsersCanRegister;
+    var enableLostPassword = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().EnableLostPassword;
+}
+@{
+    Script.Require("jQuery");    
+}
+
+<header>
+    <h2 id="page-title">@Html.TitleForPage(T("LogOn").ToString())</h2>
+</header>
+<p>
+    @T("Please enter your username and password.")
+    @if (userCanRegister)
+    { @Html.ActionLink(T("Register").Text, "Register", new { ReturnUrl = Request.QueryString["ReturnUrl"] }) @T(" if you don't have an account.") }
+    @if (enableLostPassword)
+    { <text> </text> @Html.ActionLink(T("Lost your Password?").Text, "RequestLostPassword") }
+</p>
+@Html.ValidationSummary(T("Login was unsuccessful. Please correct the errors and try again.").ToString())
+    <div class="container-fluid">       
+        <section class="center-block">
+            <div class="well row">
+                <div class="col-md-5 sign-in-up panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="page-title">@Html.TitleForPage(T("Sign In"))</h2>
+                    </div>
+                    @using (Html.BeginFormAntiForgeryPost(Url.Action("LogOn", new { ReturnUrl = Request.QueryString["ReturnUrl"] })))
+                    {
+                        <div class="login-form group panel-body">
+                            <label for="username-email" class="sr-only">@T("Logon Information")</label>
+                            <div class="form-group">
+                                <label for="username-email">@T("Username or Email")</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon25"><span class="icon s7-users"></span></span>
+                                    @Html.TextBox("userNameOrEmail", "", new { id = "username-email", autofocus = "autofocus", @class = "form-control validate[required]", placeholder = "Username (or email)" })
+                                </div>
+                                @Html.ValidationMessage("userNameOrEmail")
+                            </div>
+                            <div class="form-group">
+                                <label for="password">@T("Password")</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon26"><span class="icon s7-door-lock"></span></span>
+                                    @Html.Password("password", null, new { @class = "form-control validate[required]", placeholder = "Password" })
+                                </div>
+                                @Html.ValidationMessage("password")
+                            </div>
+                            <p class="small"><a class="iframe" href="/Users/Account/RequestLostPassword">Forgot your password?</a></p>
+                            <div class="form-group">
+                                <div class="am-checkbox">
+                                    <input type="checkbox" id="remember-me" name="remember-me" value="remember-me" />
+                                    <label for="remember-me">Remember me</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit">@T("Sign In")</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-5 col-md-offset-1 panel panel-default">
+                    <div class="panel-heading">
+                        <h2>Sign Up</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Not a member yet?</p>
+                        <p>&nbsp;</p>
+                        <p>Sign up and get started!</p>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-primary"><i class="icon s7-angle-right-circle"></i></button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='/Users/Account/Register'">Create account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>

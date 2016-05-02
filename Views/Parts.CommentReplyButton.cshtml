@@ -1,0 +1,6 @@
+﻿@using Orchard.Comments.Models
+@{
+    CommentPart comment = Model.ContentPart;
+}
+
+<a data-original-title="Reply to this Comment" title="Reply to this Comment" data-toggle="tooltip" itemprop="replyToUrl" href="#" class="comment-reply-button pull-right" data-id="@comment.Id"><span class="icon s7-angle-left-circle"></span>@T("Reply")</a>

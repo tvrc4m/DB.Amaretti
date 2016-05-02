@@ -1,0 +1,32 @@
+﻿@{
+    Script.Require("SelectableContentTab");
+    
+    var pageTitle = T("Search Content");
+    Layout.Title = pageTitle;
+}
+
+@using (Html.BeginFormAntiForgeryPost(Url.Action("index", new { controller = "search", area = "Orchard.Search", @class = "form-group form-inline" }), FormMethod.Get))
+{     
+    <label for="search-text">@T("Search")</label>
+    <div class="input-group">        
+        @Html.TextBox("searchText", (string)Model.SearchText, new { @class = "text medium form-control", autofocus = "autofocus" })
+        <span class="input-append">
+            <button class="btn btn-primary" type="submit">@T("Search")</button>
+        </span>
+    </div>
+    
+    if (Model.ContentItems.Items.Count > 0)
+    {
+        <label for="selectAll">@T("Select All")</label>
+        <input name="selectAll" type="checkbox" class="content-picker-SelectAll" />
+    }
+    <fieldset class="contentItems bulk-items">
+            @Display(Model.ContentItems)
+    </fieldset>
+    if (Model.ContentItems.Items.Count > 0)
+    {    
+        @Html.Link(T("Add Selected").Text, "#", new { @class = "button addSelected"})
+    }
+    @Display(Model.Pager)
+}
+

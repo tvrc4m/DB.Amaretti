@@ -1,0 +1,32 @@
+﻿@using Orchard.Localization
+@{
+    var title = (string)Convert.ToString(Model.Title);
+    var siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);
+    var isRtl = WorkContext.CurrentCultureInfo().TextInfo.IsRightToLeft;
+    Html.AddPageClassNames("dir-" + (isRtl ? "rtl" : "ltr"));
+}
+<!DOCTYPE html>
+<html lang="@WorkContext.CurrentCulture" class="static @Html.ClassForPage()" dir="@(isRtl?"rtl":"ltr")" itemscope itemtype=http://schema.org/WebSite>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="~/Modules/Orchard.Themes/Content/orchard.ico">
+    <title>@Html.Title(title, siteName)</title>
+    <script>(function(d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);</script>
+    <script>window.isRTL = @(isRtl.ToString().ToLowerInvariant());</script>
+    @Display(Model.Head)
+</head>
+<body class="theme-@WorkContext.CurrentTheme.Id">
+    @Display(Model.Body)
+    @Display(Model.Tail)
+    <script type="text/javascript" defer>
+        if ($.support.pjax) {
+            $(document).on('click', 'a[data-pjax]', function(event) {
+                var container = $(this).closest('[data-pjax-container]');
+                $.pjax.click(event, {container: container});
+            });
+        }
+        $(document).ready(function () { $(".group1").colorbox({ rel: "group1" }); $(".group2").colorbox({ rel: "group2" }); $(".group3").colorbox({ rel: "group3", slideshow: true }); $(".ajax").colorbox(); $(".youtube").colorbox({ iframe: true, innerWidth: 640, innerHeight: 390 }); $(".vimeo").colorbox({ iframe: true, innerWidth: 500, innerHeight: 409 }); $(".iframe").colorbox({ iframe: true, width: "80%", height: "80%" }); $(".inline").colorbox({ inline: true, width: "80%" }); $(".callbacks").colorbox({ onOpen: function () { alert("onOpen: colorbox is about to open") }, onLoad: function () { alert("onLoad: colorbox has started to load the targeted content") }, onComplete: function () { alert("onComplete: colorbox has displayed the loaded content") }, onCleanup: function () { alert("onCleanup: colorbox has begun the close process") }, onClosed: function () { alert("onClosed: colorbox has completely closed") } }); $(".non-retina").colorbox({ rel: "group5", transition: "none" }); $(".retina").colorbox({ rel: "group5", transition: "none", retinaImage: true, retinaUrl: true }); $("#click").click(function () { $("#click").css({ "background-color": "#f00", color: "#fff", cursor: "inherit" }).text("Open this window again and this message will still be here."); return false }); var b; function a() { if (b) { clearTimeout(b) } b = setTimeout(function () { if (jQuery("#cboxOverlay").is(":visible")) { jQuery.colorbox.resize({ width: "90%", height: "90%" }) } }, 300) } jQuery(window).resize(a); window.addEventListener("orientationchange", a, false) });
+    </script>
+</body>
+</html>

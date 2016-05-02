@@ -1,0 +1,8 @@
+﻿Name: DB.Amaretti
+Version: 1.10
+Author: Donald Boulton
+Tags: WoHo spend 18 dollars to use this
+Description: DB.Amaretti based on the Amaretti Admin Theme
+Website: https://wrapbootstrap.com/theme/amaretti-responsive-admin-template-WB0696K5S
+Zones:Header, Navigation, Messages, Featured, LocalNavigation, BeforeMain, Content, AfterContent, AsideRight, AsideLeft, SideMenu, AfterMain, TopMessages, TopNotifications, TopConnections, SideBarTabOne, SideBarTabTwo, SidebarTabThree, SideBarTabFour, Popup, Registration,, FooterQuadFirst, FooterQuadSecond, FooterQuadThird, FooterQuadFourth, Footer
+Dependencies: Orchard.Resources
