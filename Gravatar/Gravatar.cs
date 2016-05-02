@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DB.Ameretti.Gravatar {
+namespace DB.Amaretti.Gravatar {
 
     /// <summary>
     /// NGravatar avatar rating.
