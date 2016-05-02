@@ -20,7 +20,7 @@ namespace DBAmaretti.Handlers {
         }
     }
 
-    internal class DBAmerettiThemeSettingsPart
+    internal class DBAmarettiThemeSettingsPart
     {
     }
 }
