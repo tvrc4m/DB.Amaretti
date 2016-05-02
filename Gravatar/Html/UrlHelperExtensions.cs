@@ -1,7 +1,7 @@
 using System;
 using System.Web.Mvc;
 
-namespace DBAmeretti.Gravatar.Html {
+namespace DBAmaretti.Gravatar.Html {
 
     /// <summary>
     /// UrlHelper extension methods for retrieving Gravatar avatar images.
