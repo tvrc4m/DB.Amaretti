@@ -1,4 +1,4 @@
-﻿namespace DBAmeretti.Gravatar.Html
+﻿namespace DBAmaretti.Gravatar.Html
 {
     public class Rating
     {
