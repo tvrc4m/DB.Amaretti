@@ -1,4 +1,4 @@
-﻿@using Orchard.ContentManagement
+@using Orchard.ContentManagement
 @using Orchard.Comments
 @using Orchard.Comments.Models
 @{
@@ -20,16 +20,26 @@
     var tag = Tag(Model, "article");
 }
 @tag.StartElement
-<header>
-    <h4>
-        <span class="who">@Display.CommentAuthor(ContentPart: comment)</span>
-        <span class="when">@Display.CommentMetadata(ContentPart: comment)</span>
-        @if (comments.ThreadedComments && comments.CommentsActive && isAuthorized)
-        {
-            @Display.CommentReplyButton(ContentPart: comment)
-        }
-    </h4>
-</header>
-@Display.CommentText(ContentPart: Model.ContentPart, ContentItem: Model.ContentItem)
-@Display(children)
+<blockquote class="comment comment-@comment.Id">
+    <div class="container-fluid">
+        <div class="row">
+            <span class="col-md-1 col-lg-1">
+                @Display.CommentGravatar(ContentPart: comment)
+            </span>
+            <span class="col-md-8 col-lg-8">
+                @Display.CommentText(ContentPart: Model.ContentPart, ContentItem: Model.ContentItem)
+            </span>
+        </div>
+        <div>
+            <span class="who">@Display.CommentAuthor(ContentPart: comment)</span>
+            <span class="when">@Display.CommentMetadata(ContentPart: comment)</span>
+            @if (comments.ThreadedComments && comments.CommentsActive && isAuthorized)
+            {
+                <span class="reply"> @Display.CommentReplyButton(ContentPart: comment)</span>
+            }
+        </div>
+        @Display(children)
+     </div>
+</blockquote>
+
 @tag.EndElement
