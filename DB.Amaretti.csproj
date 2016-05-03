@@ -1384,7 +1384,7 @@
   <ItemGroup>
     <Content Include="Views\Parts.CommentAuthor.cshtml" />
     <Content Include="Views\Parts.CommentMetadata.cshtml" />
-    <Content Include="Views\Parts.CommentGravatar.cshtml" />
+    <Content Include="Views\CommentGravatar.cshtml" />
     <Content Include="Views\Parts.CommentReplyButton.cshtml" />
     <Content Include="Views\Parts.Comment.cshtml" />
     <Content Include="Views\Parts.CommentForm.cshtml" />
