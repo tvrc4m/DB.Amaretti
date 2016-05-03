@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -620,8 +620,8 @@
     <Content Include="Images\yt-icon.png" />
     <Content Include="Scripts\TheAdmin.js" />
     <Content Include="Scripts\TheAdmin.min.js" />
-    <Content Include="Scripts\db.ameretti.js" />
-    <Content Include="Scripts\db.ameretti.min.js" />
+    <Content Include="Scripts\db.amaretti.js" />
+    <Content Include="Scripts\db.amaretti.min.js" />
     <Content Include="Scripts\jquery.pjax.js" />
     <Content Include="Scripts\jquery.pjax.min.js" />
     <Content Include="Scripts\twitter.js" />
@@ -959,8 +959,8 @@
   <ItemGroup>
     <Content Include="Styles\TheAdmin.css" />
     <Content Include="Styles\TheAdmin.min.css" />
-    <Content Include="Styles\db.ameretti.css" />
-    <Content Include="Styles\db.ameretti.min.css" />
+    <Content Include="Styles\db.amaretti.css" />
+    <Content Include="Styles\db.amaretti.min.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Lib\bootstrap\dist\css\bootstrap-theme.css.map" />
@@ -1411,14 +1411,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts.TwitterWidget.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\latest-twitter.less" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\latest-twitter.css.map">
-      <DependentUpon>latest-twitter.css</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Slider.cshtml" />
