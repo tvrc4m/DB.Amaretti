@@ -1,4 +1,4 @@
-﻿@model DBAmeretti.Models.DBAmerettiThemeSettingsPart
+﻿@model DBAmaretti.Models.DBAmarettiThemeSettingsPart
 @using (Script.Foot()) {
     <script type="text/javascript">
         $(function () {
@@ -6,7 +6,7 @@
 
             $('.swatchContainer img').click(function () {
                 var swatch = $(this).data("swatch");
-                $('#DBAmerettiThemeSettings_Swatch').val(swatch);
+                $('#DBAmarettiThemeSettings_Swatch').val(swatch);
                 $('.swatchContainer').removeClass('active');
                 $('.' + swatch).addClass('active');
                 $('#inverseColorContainer').removeClass();
