@@ -1,6 +1,8 @@
 @using Orchard.ContentManagement;
 @using Orchard.Tags.ViewModels;
 @using Orchard.Utility.Extensions;
+@using Orchard.Comments
+@using Orchard.Comments.Models
 
 @{
     var blogPost = Model.ContentItem;
@@ -14,21 +16,17 @@
         </div>
     </header>
     <div class="row metadata">     
-        <div class="col-md-6">
-            <div class="pull-left">
+        <div class="pull-left">        
                 @if (Model.Tags.Items.Count > 0 && ((IEnumerable<ShowTagViewModel>)Model.Tags.Items[0].Tags).Any()) {
-                    <i class="icon s7-ticket"></i>@Display(Model.Tags)
+                    <span class="icon s7-ticket"></span>@Display(Model.Tags)
                 }
-                <i class="icon s7-users"></i>&nbsp;<a itemprop="url" href="@Href("~/profile/")@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a>
+                <span class="icon s7-users"></span>&nbsp;<a itemprop="url" href="@Href("~/profile/")@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a>    
         </div>
-        </div>
-         <div class="col-md-6">
-            <div class="pull-right">
-                <span><i class="icon s7-comment"></i>
-                <a href="#comments-link">@Display(Model.CommentsCount)</a></span>                
-                <span itemprop="datePublished"><i class="icon s7-date"></i>
+         <div class="pull-right">
+                <span><span class="icon s7-comment"></span>
+                    <span class="comment-count label label-info">@T.Plural("No Comments", "1 Comment", "{0} Comments", (int)Model.CommentCount)</span></span>                
+                <span itemprop="datePublished"><span class="icon s7-date"></span>
                 @blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMMM d, yyyy")</span>
-            </div>
         </div>
     </div>    
     @Display(Model.Summary)
