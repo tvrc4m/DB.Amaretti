@@ -1,7 +1,6 @@
-﻿@model Orchard.Comments.Models.CommentPart
+@model Orchard.Comments.Models.CommentPart
 <div class="who">
     <label id="add-comment">@T("Add a Comment")</label>
-    <p><small>Comments are Moderated, from, "(Spam-bots)", before they are posted.</small></p>
     @if (WorkContext.CurrentUser == null)
     {
         <div class="container-fluid center-block">
@@ -49,6 +48,7 @@
         @Html.HiddenFor(m => m.CommentedOn)
         @Html.HiddenFor(m => m.RepliedOn)
     </div>
+    <div class="clearfix"></div>
     <div class="form-group">
         <div class="am-checkbox">
             <input class="required" required type="checkbox" id="terms" name="terms" />
