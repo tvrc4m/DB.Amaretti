@@ -1382,15 +1382,15 @@
     <Content Include="Views\Media.Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts.CommentAuthor.cshtml" />
-    <Content Include="Views\Parts.CommentMetadata.cshtml" />
+    <Content Include="Views\CommentAuthor.cshtml" />
+    <Content Include="Views\CommentMetadata.cshtml" />
     <Content Include="Views\CommentGravatar.cshtml" />
-    <Content Include="Views\Parts.CommentReplyButton.cshtml" />
+    <Content Include="Views\CommentReplyButton.cshtml" />
+    <Content Include="Views\CommentText.cshtml" />
     <Content Include="Views\Parts.Comment.cshtml" />
     <Content Include="Views\Parts.CommentForm.cshtml" />
     <Content Include="Views\Parts.Comments.Count.cshtml" />
     <Content Include="Views\Parts.ListOfComments.cshtml" />
-    <Content Include="Views\Parts.CommentReplyButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gravatar\Gravatar.cs" />
@@ -1403,7 +1403,6 @@
     <Compile Include="Models\DBAmarettiThemeSettingsPart.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts.TagCloud.cshtml" />
     <Content Include="Views\Parts.Tags.ShowTags.cshtml" />    
   </ItemGroup>
   <ItemGroup>
