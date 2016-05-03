@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -1382,15 +1382,15 @@
     <Content Include="Views\Media.Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\CommentAuthor.cshtml" />
-    <Content Include="Views\CommentMetadata.cshtml" />
-    <Content Include="Views\CommentGravatar.cshtml" />
-    <Content Include="Views\CommentReplyButton.cshtml" />
+    <Content Include="Views\Parts.CommentAuthor.cshtml" />
+    <Content Include="Views\Parts.CommentMetadata.cshtml" />
+    <Content Include="Views\Parts.CommentGravatar.cshtml" />
+    <Content Include="Views\Parts.CommentReplyButton.cshtml" />
     <Content Include="Views\Parts.Comment.cshtml" />
     <Content Include="Views\Parts.CommentForm.cshtml" />
     <Content Include="Views\Parts.Comments.Count.cshtml" />
     <Content Include="Views\Parts.ListOfComments.cshtml" />
-    <Content Include="Views\CommentReplyButton.cshtml" />
+    <Content Include="Views\Parts.CommentReplyButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gravatar\Gravatar.cs" />
